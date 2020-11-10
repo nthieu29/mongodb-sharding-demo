@@ -4,6 +4,7 @@ import com.example.nthieu29.entity.Restaurant;
 import com.example.nthieu29.repository.RestaurantRepository;
 import com.github.javafaker.Faker;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class RestaurantService {
     private final RestaurantRepository restaurantRepository;
 
@@ -28,13 +30,7 @@ public class RestaurantService {
             restaurants.add(restaurant);
         }
         restaurantRepository.saveAll(restaurants);
+        log.info("Generated {} restaurants successfully", restaurants.size());
     }
 
-    public List<Restaurant> getAllRestaurants() {
-        return restaurantRepository.findAll();
-    }
-
-    public Restaurant addRestaurant(Restaurant restaurant) {
-        return restaurantRepository.save(restaurant);
-    }
 }
