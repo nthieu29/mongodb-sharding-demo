@@ -23,6 +23,8 @@ We will setup a simple MongoDB sharded cluster as following:
 
 ![Simple-Shard](external-files/simple-shard.jpeg)
 
+The application is a simple REST API microservice manage restaurants, and we will demonstrate how to to distribute restaurant data accross 3 shards by city.
+
 In the case you want [high availability](https://docs.mongodb.com/manual/reference/glossary/#term-high-availability), you could deploy a shard as a [replica set](https://docs.mongodb.com/manual/replication/#replication-in-mongodb), and the deployment could be like (for the simplicity of this demonstration, we skip this for now):
 
 ![Replica-Shard](external-files/replica-shard.jpeg)
